@@ -28,27 +28,31 @@ def change_text(text_list, change_indices):
             text_list[i] = random.choice(random_letters)
     return text_list
 
-
-if len(sys.argv) == 1:
-    text = "Try writing a custom text after python glitch.py!"
-else:
-    text = sys.argv[1]
-
-# Converting string to list
-letter_list = [letter for letter in text]
-fake_list = random_generator(len(letter_list))
-correct_indices = []
-
-while letter_list != fake_list:
-    
-    print(''.join(fake_list), end='\r')
-    correct_index = match_text(letter_list, fake_list)
-    if correct_index:
-        correct_indices.extend(correct_index)
-    if(len(correct_indices) <= 0):
-        fake_list = random_generator(len(letter_list))
+def main():
+    if len(sys.argv) == 1:
+        text = "Try writing a custom text after python glitch.py!"
     else:
-        fake_list = change_text(fake_list, correct_indices)
-    sleep(0.01)
+        text = sys.argv[1]
 
-print(''.join(letter_list))
+    # Converting string to list
+    letter_list = [letter for letter in text]
+    fake_list = random_generator(len(letter_list))
+    correct_indices = []
+
+    while letter_list != fake_list:
+        
+        print(''.join(fake_list), end='\r')
+        correct_index = match_text(letter_list, fake_list)
+        if correct_index:
+            correct_indices.extend(correct_index)
+        if(len(correct_indices) <= 0):
+            fake_list = random_generator(len(letter_list))
+        else:
+            fake_list = change_text(fake_list, correct_indices)
+        sleep(0.01)
+
+    print(''.join(letter_list))
+    
+    
+if __name__ == "__main__":
+    main()
