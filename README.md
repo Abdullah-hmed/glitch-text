@@ -6,7 +6,7 @@ To install the glitch package and use it as a command-line tool:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/glitch
+git clone https://github.com/Abdullah-hmed/glitch-text.git
 cd glitch
 ```
 Install the package locally:
