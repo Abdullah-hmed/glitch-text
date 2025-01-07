@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="glitch",
+    name="glitch-text",
     version="1.0.0",
     py_modules=["glitch"],
     entry_points={
